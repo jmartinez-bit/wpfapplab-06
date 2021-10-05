@@ -54,13 +54,11 @@ namespace Data
             try
             {
                 comandText = "USP_InsCategoria";
-                parameters = new SqlParameter[3];
-                parameters[0] = new SqlParameter("@idcategoria", SqlDbType.Int);
-                parameters[0].Value = categoria.IdCategoria;
-                parameters[1] = new SqlParameter("@nombrecategoria", SqlDbType.VarChar);
-                parameters[1].Value = categoria.NombreCategoria;
-                parameters[2] = new SqlParameter("@descripcion", SqlDbType.Text);
-                parameters[2].Value = categoria.Descripcion;
+                parameters = new SqlParameter[2];
+                parameters[0] = new SqlParameter("@nombrecategoria", SqlDbType.VarChar);
+                parameters[0].Value = categoria.NombreCategoria;
+                parameters[1] = new SqlParameter("@descripcion", SqlDbType.Text);
+                parameters[1].Value = categoria.Descripcion;
                 SQLHelper.ExecuteNonQuery(SQLHelper.Connection, comandText, CommandType.StoredProcedure, parameters);
             }
             catch (Exception ex)

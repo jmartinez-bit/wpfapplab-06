@@ -32,7 +32,6 @@ namespace Business
             bool result = true;
             try
             {
-                categoria.IdCategoria = categoria.IdCategoria + 1;
                 DCategoria = new DCategoria();
                 DCategoria.Insertar(categoria);
             }
